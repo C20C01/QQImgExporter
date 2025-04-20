@@ -68,6 +68,7 @@ class QQImgExporter:
                 self.index += 1
                 future = self.executor.submit(self.__pull, line.strip(), self.index)
                 future.add_done_callback(lambda _: self.tasks.release())
+        self.executor.shutdown(wait=True)
         self.__end()
 
     def __end(self):
