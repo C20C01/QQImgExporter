@@ -72,7 +72,6 @@ class QQImgExporter:
         self.__end()
 
     def __end(self):
-        self.executor.shutdown(wait=True)
         end_time = datetime.now()
         if os.path.exists(self.paths_path):
             os.remove(self.paths_path)
