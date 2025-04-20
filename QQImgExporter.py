@@ -115,9 +115,19 @@ class QQImgExporter:
 
 
 if __name__ == "__main__":
+    if chat_pic_path.endswith("/") or chat_pic_path.endswith("\\"):
+        chat_pic_path = chat_pic_path[:-1]
+    if not chat_pic_path.endswith("chatpic"):
+        print("请检查chat_pic_path路径")
+        exit(1)
+
     if not save_path:
         save_path = os.path.abspath(os.path.curdir) + "/chatpic"
+    elif save_path.endswith("/") or save_path.endswith("\\"):
+        save_path = save_path[:-1]
+
     max_workers = min(max(1, max_workers), 32)
+
     for task in tasks:
         print(f"开始导出 {task} 文件夹下的图片")
         QQImgExporter(f"{chat_pic_path}/{task}", f"{save_path}/{task}", max_workers).start()
