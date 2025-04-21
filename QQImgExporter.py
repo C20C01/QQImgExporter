@@ -1,6 +1,6 @@
 # 使用adb将手机QQ聊天中的图片复制到电脑
 
-# 供adb访问手机QQ的图片文件夹，可能需要根据手机实际情况修改
+# 手机QQ的图片文件夹的路径（不能包含中文），可能需要根据手机实际情况修改
 chat_pic_path = "/storage/emulated/0/Android/data/com.tencent.mobileqq/Tencent/MobileQQ/chatpic"
 
 # noinspection PyListCreation
@@ -10,7 +10,7 @@ tasks.append("chatimg")  # 点开过的图片
 tasks.append("chatraw")  # 保存过的图片
 tasks.append("chatthumb")  # 没有点开看的图片
 
-# 在电脑上保存图片的路径，留空则将保存到当前目录下的“chatpic”文件夹
+# 电脑保存图片的路径（不能包含中文），留空则将保存到当前目录下的“chatpic”文件夹
 save_path = ""
 
 # 最大线程数，与CPU核心数相同即可，不是越大越好

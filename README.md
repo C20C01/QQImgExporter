@@ -6,7 +6,7 @@
 
 ## 使用adb将手机QQ聊天中的图片复制到电脑
 
-1. 选一个文件夹（之后的步骤均在此文件夹中完成），克隆该仓库
+1. 选一个路径**不包含中文**的地方克隆该仓库（之后的步骤均在克隆出的`QQImgExporter`文件夹中完成）
 2. 下载`adb`工具，放入该文件夹中；以windows为例，
    [下载工具包](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)
    取出其中的`adb.exe`、`AdbWinApi.dll`、`AdbWinUsbApi.dll`即可
@@ -24,4 +24,8 @@
 7. 输入下面的命令运行脚本
    ```shell
    python QQImgExporter.py
+   ```
+8. 待脚本运行完毕，输入下面的命令关闭`adb`
+   ```shell
+   adb kill-server
    ```
